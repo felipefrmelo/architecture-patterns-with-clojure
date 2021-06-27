@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="af2dc864-8d5e-48bd-889f-a48ed9712f5c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__clj_time_0_15_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/architecture_patterns_with_clojure/model.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__clj_time_0_12_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__joda_time_2_9_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__joda_time_2_10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/intro.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/intro.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.clj" beforeDir="false" afterPath="$PROJECT_DIR$/project.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/architecture_patterns_with_clojure/core.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/architecture_patterns_with_clojure/core.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/architecture_patterns_with_clojure/core_test.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/architecture_patterns_with_clojure/test_model.clj" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Clojure Test Namespace" />
+        <option value="Clojure Namespace" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1uV2ZLwKAU97S5glI4YAYgUtTtk" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="flattenPackages" value="true" />
+    <option name="foldersAlwaysOnTop" value="false" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="cursive.last.file.extension./home/felipe/cursos/functional-programing/clojure/architecture-patterns-with-clojure/src" value="clj" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="ReplState" timestamp="1624838119035">{:repl-history {:ide [], :local [{:command &quot;#inst (.toInstant (java.util.Date.))&quot;, :offset 36, :ns &quot;architecture-patterns-with-clojure.model-test&quot;} {:command &quot;#inst (.toLocaleString (java.util.Date.))&quot;, :offset 41, :ns &quot;architecture-patterns-with-clojure.model-test&quot;} {:command &quot;(java.sql.Date/from (java.time.Instant/now) )&quot;, :offset 45, :ns &quot;architecture-patterns-with-clojure.model-test&quot;} {:command &quot;(inst-ms (java.time.Instant/now))&quot;, :offset 33, :ns &quot;architecture-patterns-with-clojure.model-test&quot;} {:command &quot;(.toInstant (java.util.Date.))&quot;, :offset 30, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(java.util.Date.)&quot;, :offset 17, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(java.util.Date/UTC 2021 06 26 23 20 0)&quot;, :offset 39, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(java.util.Calendar/DATE)&quot;, :offset 25, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(java.util.Calendar/AM)&quot;, :offset 23, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(java.util.Calendar/DAY_OF_MONTH)&quot;, :offset 33, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(java.util.Calendar/DAY_OF_YEAR)&quot;, :offset 32, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(java.util.Calendar/APRIL)&quot;, :offset 26, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(java.util.Calendar/HOUR)&quot;, :offset 25, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(java.util.Calendar/SHORT_FORMAT)&quot;, :offset 33, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(java.util.Calendar/getInstance)&quot;, :offset 32, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(.add (Calendar/getInstance) Calendar/HOUR 3)&quot;, :offset 45, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(.add (Calendar/getInstance) Calendar/HOUR )&quot;, :offset 44, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(Calendar/getInstance)&quot;, :offset 22, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(.add (Calendar/getInstance) 3 Calendar/HOUR )&quot;, :offset 46, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(.toInstant (Calendar/getInstance)  )&quot;, :offset 37, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(.minus (.toInstant (Calendar/getInstance)) 1 Calendar/DATE)&quot;, :offset 60, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(.minus (.toInstant (Calendar/getInstance)) 1 ChronoUnit/DAYS)&quot;, :offset 62, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(Calendar/getInstance (.minus (.toInstant (Calendar/getInstance)) 1 ChronoUnit/DAYS) )&quot;, :offset 86, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(Date. (.minus (.toInstant (Calendar/getInstance)) 1 ChronoUnit/DAYS) )&quot;, :offset 71, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(Date/from (.minus (.toInstant (Calendar/getInstance)) 1 ChronoUnit/DAYS) )&quot;, :offset 75, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;#inst \&quot;2021-06-26T02:30:18.487-00:00\&quot;&quot;, :offset 37, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(.getYear #inst \&quot;2021-06-26T02:30:18.487-00:00\&quot;)&quot;, :offset 48, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(.toInstant #inst \&quot;2021-06-26T02:30:18.487-00:00\&quot;)&quot;, :offset 50, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(.plus #inst \&quot;2021-06-26T02:30:18.487-00:00\&quot;)&quot;, :offset 45, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(.plus #inst \&quot;2021-06-26T02:30:18.487-00:00\&quot; 1)&quot;, :offset 47, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(.plus #inst \&quot;2021-06-26T02:30:18.487-00:00\&quot; #inst \&quot;2021-06-26T02:30:18.487-00:00\&quot;)&quot;, :offset 83, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(def now (Date.))&quot;, :offset 17, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(def now Date)&quot;, :offset 14, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(now.)&quot;, :offset 6, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(def now #(Date.))&quot;, :offset 18, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;now&quot;, :offset 3, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(now)&quot;, :offset 5, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(.plus (now) 1 ChronoUnit/DAYS)&quot;, :offset 31, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(.plus (now) 1 (:days units))&quot;, :offset 29, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(Inst (now))&quot;, :offset 12, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(clojure.instant (now))&quot;, :offset 23, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(.toInstant (now))&quot;, :offset 18, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(Date/from (java.time.Instant/now))&quot;, :offset 35, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(defn plus [date amount-to-add unit] \n  (-&gt; date .toInstant (.plus  amount-to-add (units unit)) (Date/from))\n  )&quot;, :offset 112, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(plus (now) 2 :days)&quot;, :offset 20, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(plus (now) -2 :days)&quot;, :offset 21, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(plus (now) 2 :minuter)&quot;, :offset 23, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(plus (now) 2 :minutes)&quot;, :offset 23, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(plus (now) -2 :minutes)&quot;, :offset 24, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(.getYear (plus (now) -2 :minutes))&quot;, :offset 35, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(.toInstant (plus (now) -2 :minutes))&quot;, :offset 37, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(.getYear (.toInstant (plus (now) -2 :minutes)))&quot;, :offset 48, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(java.time.Instant/now)&quot;, :offset 23, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(Date.)&quot;, :offset 7, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(.after (Date.) (plus (now) 1 :days))&quot;, :offset 37, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(.after (Date.) (plus (now) -1 :days))&quot;, :offset 38, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(.getDay (Date.))&quot;, :offset 17, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(.getMonth (Date.))&quot;, :offset 19, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(defn plus [date amount-to-add unit] \n  (-&gt; date (.toInstant) (.plus  amount-to-add (units unit)) (Date/from))\n  )&quot;, :offset 114, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(defn minus [date amount-to-add unit] (plus date amount-to-add unit))&quot;, :offset 69, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(inst-ms nil)&quot;, :offset 13, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(inst-ms (now))&quot;, :offset 15, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(inst-ms* (now) )&quot;, :offset 17, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(inst-ms* nil )&quot;, :offset 15, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(inst-ms* \&quot;\&quot; )&quot;, :offset 14, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(inst-ms \&quot;\&quot; )&quot;, :offset 13, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(inst? nil )&quot;, :offset 12, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(inst? (now) )&quot;, :offset 14, :ns &quot;architecture-patterns-with-clojure.util.date&quot;} {:command &quot;(defn t [{:keys [eta] :or {eta 1} }]  eta )&quot;, :offset 43, :ns &quot;architecture-patterns-with-clojure.model-test&quot;} {:command &quot;(t 1)&quot;, :offset 5, :ns &quot;architecture-patterns-with-clojure.model-test&quot;} {:command &quot;(t {:eta 2})&quot;, :offset 12, :ns &quot;architecture-patterns-with-clojure.model-test&quot;} {:command &quot;(t {:eta nil})&quot;, :offset 14, :ns &quot;architecture-patterns-with-clojure.model-test&quot;} {:command &quot;(&lt; nil 1)&quot;, :offset 9, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(&lt; 2 1)&quot;, :offset 7, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(&lt; (int nil) 1)&quot;, :offset 15, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(inst-ms 1)&quot;, :offset 11, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(defn tt\n  ([a &amp; args] (println a (apply str args)))\n  ([a b] (println a b)))&quot;, :offset 77, :ns &quot;architecture-patterns-with-clojure.model-test&quot;} {:command &quot;(defn tt\n  ([a b &amp; args] (println a (apply str args)))\n  ([a b] (println a b)))&quot;, :offset 79, :ns &quot;architecture-patterns-with-clojure.model-test&quot;} {:command &quot;([{:eta (date/now)} {:eta (date/plus (date/now) 1 :days)}])&quot;, :offset 59, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(apply max-key  [{:eta (date/now)} {:eta (date/plus (date/now) 5 :days)}])&quot;, :offset 74, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(apply max-key  [{:eta (date/now)} {:eta (date/plus (date/now) 6 :days)}])&quot;, :offset 74, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(apply max-key  [{:eta (date/now)} {:eta (date/plus (date/now) 1 :days)}])&quot;, :offset 74, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(apply max-key  [{:eta (date/now)} {:eta (date/plus (date/now) 7 :days)}])&quot;, :offset 74, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(apply max-key  [{:eta (date/now)} {:eta (date/plus (date/now) 2 :days)}])&quot;, :offset 74, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(apply max-key  [{:eta (date/now)} {:eta (date/plus (date/now) 3 :days)}])&quot;, :offset 74, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(apply max-key  [{:eta (date/now)} {:eta (date/plus (date/now) 4 :days)}])&quot;, :offset 74, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(apply max-key  [{:eta (date/now)} {:eta (date/plus (date/now) -1 :days)}])&quot;, :offset 75, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(apply max-key  [{:eta (date/now)} {:eta (date/plus (date/now) -10 :days)}])&quot;, :offset 76, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(apply max-key  [{:eta (date/now)} \n                 {:eta (date/plus (date/now) 10 :days)}\n                 {:eta (date/plus (date/now) 100 :days)}])&quot;, :offset 150, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(apply max-key  [{:eta (date/now)} \n                 ;{:eta (date/plus (date/now) 10 :days)}\n                 {:eta (date/plus (date/now) 100 :days)}]\n       )&quot;, :offset 159, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(apply max-key  [{:eta (date/now)} \n                 {:eta (date/plus (date/now) 10 :days)}\n                 {:eta (date/plus (date/now) 100 :days)}]\n       )&quot;, :offset 158, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(apply identity  [{:eta (date/now)} \n                 {:eta (date/plus (date/now) 10 :days)}\n                 {:eta (date/plus (date/now) 100 :days)}]\n       )&quot;, :offset 159, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(apply map identity  [{:eta (date/now)} \n                 {:eta (date/plus (date/now) 10 :days)}\n                 {:eta (date/plus (date/now) 100 :days)}]\n       )&quot;, :offset 163, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(let [ds [{:eta (date/now)}\n          {:eta (date/plus (date/now) 10 :days)}\n          {:eta (date/plus (date/now) 100 :days)}]]\n  (println ds))&quot;, :offset 144, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(let [ds [{:eta (date/now)}\n          {:eta (date/plus (date/now) 10 :days)}\n          {:eta (date/plus (date/now) 100 :days)}]]\n  (println ds)\n  (apply max-key ds )\n  )&quot;, :offset 169, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(let [ds [{:eta (date/now)}\n          {:eta (date/plus (date/now) 10 :days)}\n          {:eta (date/plus (date/now) 100 :days)}]]\n  (println ds)\n  (apply max-key :eta ds )\n  )&quot;, :offset 174, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(let [ds [{:eta (date/now)}\n          {:eta (date/plus (date/now) 10 :days)}\n          {:eta (date/plus (date/now) 100 :days)}]]\n  (println ds)\n  (apply max-key #(inst-ms (:eta %)) ds )\n  )&quot;, :offset 189, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(let [ds [{:id 1 :eta (date/now)}\n          {:id 2 :eta (date/plus (date/now) 10 :days)}\n          {:id 3 :eta (date/plus (date/now) 100 :days)}]]\n  (println ds)\n  (apply max-key #(inst-ms (:eta %)) ds )\n  )&quot;, :offset 207, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(let [ds [{:id 1 :eta (date/now)}\n          {:id 2 :eta (date/plus (date/now) 101 :days)}\n          {:id 3 :eta (date/plus (date/now) 100 :days)}]]\n  (println ds)\n  (apply max-key #(inst-ms (:eta %)) ds )\n  )&quot;, :offset 208, :ns &quot;architecture-patterns-with-clojure.model&quot;} {:command &quot;(deftest test-allocate\n  (testing \&quot;allocating to a batch reduces the available quantity\&quot;\n    (let [[batch line] (make-batch-and-line default-sku 20 2)]\n      (is (match? 18\n                  (:available-quantity (model/allocate  line batch))))\n      ))\n\n  (testing \&quot;can allocate if available is greater than required\&quot;\n    (let [[large_batch small_line] (make-batch-and-line default-sku 20 2)]\n      (is (match? true? (model/can-allocate? large_batch small_line)))\n      ))\n\n  (testing \&quot;cannot allocate if available is smaller than required\&quot;\n    (let [[small_batch large_line] (make-batch-and-line default-sku 2 20)]\n      (is (match? false? (model/can-allocate? small_batch large_line)))\n      ))\n\n  (testing \&quot;can allocate if available is equal to required\&quot;\n    (let [[batch line] (make-batch-and-line default-sku 20 20)]\n      (is (match? true? (model/can-allocate? batch line)))\n      ))\n\n  (testing \&quot;cannot allocate if skus do not match\&quot;\n\n    (let [[batch line] (make-batch-and-line default-sku 20 2)\n          different-sku-li (assoc line :sku \&quot;DIFFERENT-SKU\&quot;)]\n      (is (match? false? (model/can-allocate? batch different-sku-li)))\n      ))\n  (testing \&quot;can_only_deallocate_allocated_lines\&quot;\n    (let [[batch unallocated_line] (make-batch-and-line default-sku 20 2)]\n      (is (match? 20 (:available-quantity (model/deallocate batch unallocated_line))))\n      ))\n\n  (testing \&quot;allocating is idempotent\&quot;\n    (let [[batch line] (make-batch-and-line default-sku 20 2)]\n      (is (match? {:available-quantity 18}\n                  (-&gt;&gt; batch (model/allocate line) (model/allocate line))))\n      ))\n\n  (testing \&quot;prefers current stock batches to shipments\&quot;\n    (let [in-stock-batch (model/new-batch {:ref      \&quot;batch-001\&quot;\n                                           :sku      default-sku\n                                           :quantity 100\n                                           :eta      today})\n          shipment-batch (model/new-batch {:ref      \&quot;batch-002\&quot;\n                                           :sku      default-sku\n                                           :quantity 100\n                                           :eta      tomorrow})\n          line (model/new-order-line {:order-id \&quot;123\&quot; :sku default-sku :quantity 10})]\n      (is (match? (update in-stock-batch :available-quantity 90) (model/allocate line in-stock-batch shipment-batch)))\n      )\n    )\n  )&quot;, :offset 2376, :ns &quot;architecture-patterns-with-clojure.model-test&quot;}], :remote []}}</component>
+  <component name="RunManager" selected="Clojure REPL.REPL for architecture-patterns-with-clojure">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="REPL for architecture-patterns-with-clojure" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false" temporary="true">
+      <module name="architecture-patterns-with-clojure" />
+      <setting name="displayName" value="REPL for architecture-patterns-with-clojure" />
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="$PROJECT_DIR$" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <setting name="displayName" value="" />
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false">
+      <setting name="displayName" value="" />
+      <setting name="host" value="" />
+      <setting name="port" value="0" />
+      <setting name="replType" value="SOCKET" />
+      <setting name="configType" value="SPECIFY" />
+      <setting name="replPortFileType" value="STANDARD" />
+      <setting name="customPortFile" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test architecture-patterns-with-clojure.model-test/test-allocate" type="ClojureTestRunConfiguration" factoryName="clojure.test" temporary="true">
+      <module name="architecture-patterns-with-clojure" />
+      <option name="selector" value="SINGLE_VAR" />
+      <option name="varFqn" value="architecture-patterns-with-clojure.model-test/test-allocate" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Clojure REPL.REPL for architecture-patterns-with-clojure" />
+        <item itemvalue="clojure.test.Test architecture-patterns-with-clojure.model-test/test-allocate" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="af2dc864-8d5e-48bd-889f-a48ed9712f5c" name="Default Changelist" comment="" />
+      <created>1624736489572</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624736489572</updated>
+      <workItem from="1624736490822" duration="60000" />
+      <workItem from="1624736569607" duration="2093000" />
+      <workItem from="1624738688365" duration="27330000" />
+      <workItem from="1624833676964" duration="4441000" />
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

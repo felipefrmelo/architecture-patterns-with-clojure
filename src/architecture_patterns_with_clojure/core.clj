@@ -1,6 +1,9 @@
-(ns architecture-patterns-with-clojure.core)
+(ns architecture-patterns-with-clojure.core
+  )
+
 
 (defn foo
   "I don't do a whole lot."
   [x]
   (println x "Hello, World!"))
+

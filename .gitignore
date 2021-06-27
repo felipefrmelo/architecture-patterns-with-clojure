@@ -10,4 +10,3 @@ pom.xml.asc
 /.nrepl-port
 .hgignore
 .hg/
-/architecture_patterns_with_clojure.iml
