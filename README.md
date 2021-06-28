@@ -1,4 +1,4 @@
-# architecture_patterns_with_clojure
+# architecture-patterns-with-clojure
 
 A Clojure library designed to ... well, that part is up to you.
 

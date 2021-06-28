@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/architecture_patterns_with_clojure.iml" filepath="$PROJECT_DIR$/architecture_patterns_with_clojure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/architecture-patterns-with-clojure.iml" filepath="$PROJECT_DIR$/architecture-patterns-with-clojure.iml" />
     </modules>
   </component>
 </project>
