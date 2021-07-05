@@ -1,5 +1,4 @@
-(ns architecture-patterns-with-clojure.core
-  )
+(ns architecture-patterns-with-clojure.core)
 
 
 (defn foo
