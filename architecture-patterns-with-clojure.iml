@@ -19,9 +19,6 @@
     <orderEntry type="library" name="Leiningen: clojure-humanize:0.2.2" level="project" />
     <orderEntry type="library" name="Leiningen: colorize:0.1.1" level="project" />
     <orderEntry type="library" name="Leiningen: com.andrewmcveigh/cljs-time:0.4.0" level="project" />
-    <orderEntry type="library" name="Leiningen: com.h2database/h2:1.4.200" level="project" />
-    <orderEntry type="library" name="Leiningen: com.mchange/c3p0:0.9.5.2" level="project" />
-    <orderEntry type="library" name="Leiningen: com.mchange/mchange-commons-java:0.2.11" level="project" />
     <orderEntry type="library" name="Leiningen: com.rpl/specter:1.0.5" level="project" />
     <orderEntry type="library" name="Leiningen: commons-codec:1.11" level="project" />
     <orderEntry type="library" name="Leiningen: environ:1.1.0" level="project" />
@@ -41,7 +38,6 @@
     <orderEntry type="library" name="Leiningen: org.clojure/core.specs.alpha:0.2.44" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/core.unify:0.5.7" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/java.classpath:0.2.3" level="project" />
-    <orderEntry type="library" name="Leiningen: org.clojure/java.jdbc:0.7.12" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/math.combinatorics:0.1.6" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/math.numeric-tower:0.0.4" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/spec.alpha:0.2.176" level="project" />
@@ -49,7 +45,6 @@
     <orderEntry type="library" name="Leiningen: org.clojure/tools.macro:0.1.5" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/tools.namespace:0.3.0" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/tools.reader:0.10.0" level="project" />
-    <orderEntry type="library" name="Leiningen: org.postgresql/postgresql:42.1.4" level="project" />
     <orderEntry type="library" name="Leiningen: org.tcrawley/dynapath:1.0.0" level="project" />
     <orderEntry type="library" name="Leiningen: potemkin:0.4.4" level="project" />
     <orderEntry type="library" name="Leiningen: riddley:0.1.12" level="project" />
