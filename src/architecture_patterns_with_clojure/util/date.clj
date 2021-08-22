@@ -1,7 +1,7 @@
 (ns architecture-patterns-with-clojure.util.date
   (:import
     (java.time.temporal ChronoUnit)
-    (java.time LocalDateTime ZoneId)
+    (java.time LocalDateTime ZoneId LocalDate)
     (java.util Date))
   )
 
@@ -19,6 +19,8 @@
   (-> date (.toInstant) (.atZone (ZoneId/systemDefault)) (.toLocalDateTime)))
 
 (defn to-db [date] (identity date))
+
+(defn parse [date-string] (LocalDateTime/parse  date-string))
 
 (defn to-inst-ms [date]
   (-> date (.atZone (ZoneId/systemDefault)) (.toInstant) (inst-ms)))

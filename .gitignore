@@ -10,3 +10,8 @@ pom.xml.asc
 /.nrepl-port
 .hgignore
 .hg/
+/.calva/
+/.idea/
+/.clj-kondo/
+/.vscode/
+/.lsp/

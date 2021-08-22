@@ -1,6 +1,8 @@
-(ns architecture-patterns-with-clojure.database
+(ns architecture-patterns-with-clojure.adapters.database
   (:require [clojure.java.jdbc :as jdbc])
   (:import (com.mchange.v2.c3p0 ComboPooledDataSource)))
+
+
 
 (def db-spec
   {

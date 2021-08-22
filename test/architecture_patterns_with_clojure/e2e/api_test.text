@@ -1,0 +1,102 @@
+(ns architecture-patterns-with-clojure.e2e.api-test
+  (:require [clojure.string :as str]
+            [clojure.test :refer [deftest testing use-fixtures is]]
+            [matcher-combinators.test :refer [match? thrown-match?]]
+            [architecture-patterns-with-clojure.adapters.database :as database]
+            [architecture-patterns-with-clojure.fixtures :as fixtures]
+            [architecture-patterns-with-clojure.util.date :as date]
+            [clj-http.client :as client]
+            [architecture-patterns-with-clojure.config.config :as config]))
+
+
+(use-fixtures :each fixtures/db-fixture)
+
+(defn random-suffix []
+  (str/join "" (take 6 (.toString (java.util.UUID/randomUUID)))))
+
+(defn random-sku [& {:keys [name] :or {name ""}}]
+  (str "sku-" name "-" (random-suffix)))
+
+
+(defn random-batchref [& {:keys [name] :or {name ""}}]
+  (str "batch-" name "-" (random-suffix)))
+
+(defn random-orderid [& {:keys [name] :or {name ""}}]
+  (str "order-" name "-" (random-suffix)))
+
+(deftest test-allocate
+  (testing "happy path returns 201 and allocated batch"
+    (let [sku (random-sku)
+          other-sku (random-sku :name "other")
+          early-batch (random-batchref :name 1)
+          later-batch (random-batchref :name 2)
+          other-batch (random-batchref :name 3)
+          data {"order_id" (random-orderid) "sku" sku "quantity" 3}]
+      (fixtures/add-stock database/db [
+                                       {:ref early-batch :sku sku :quantity 100 :eta (date/parse "2011-01-01T00:00")}
+                                       {:ref later-batch :sku sku :quantity 100 :eta (date/parse "2011-01-02T00:00")}
+                                       {:ref other-batch :sku other-sku :quantity 100 :eta (date/parse "2010-01-01T00:00")}
+                                       ])
+      (is (match? {:status 201 :body {:batchref early-batch}}
+                  (client/post (str (config/get-api-url) "/allocate") {:form-params  data
+                                                                       :content-type :json
+                                                                       :accept       :json
+                                                                       :as           :json
+                                                                       }))))))
+
+(deftest test-allocations-are-persisted
+  (testing "test allocations are persisted "
+    (let [sku (random-sku)
+          batch1 (random-batchref :name 1)
+          batch2 (random-batchref :name 2)
+          order1 (random-orderid :name 1)
+          order2 (random-orderid :name 2)
+          line1 {"order_id" order1 "sku" sku "quantity" 10}
+          line2 {"order_id" order2 "sku" sku "quantity" 10}]
+      (fixtures/add-stock database/db [
+                                       {:ref batch1 :sku sku :quantity 10 :eta (date/parse "2011-01-01T00:00")}
+                                       {:ref batch2 :sku sku :quantity 10 :eta (date/parse "2011-01-02T00:00")}
+                                       ])
+      (is (match? {:status 201 :body {:batchref batch1}}
+                  (client/post (str (config/get-api-url) "/allocate") {:form-params  line1
+                                                                       :content-type :json
+                                                                       :accept       :json
+                                                                       :as           :json
+                                                                       })))
+      (is (match? {:status 201 :body {:batchref batch2}}
+                  (client/post (str (config/get-api-url) "/allocate") {:form-params  line2
+                                                                       :content-type :json
+                                                                       :accept       :json
+                                                                       :as           :json
+                                                                       })))
+      )))
+
+
+(deftest test-400-message-for-out-of-stock
+  (testing "test 400 message for out of stock"
+    (let [sku (random-sku)
+          batch1 (random-batchref :name 1)
+          order1 (random-orderid :name 1)
+          line1 {"order_id" order1 "sku" sku "quantity" 11}
+          ]
+      (fixtures/add-stock database/db [
+                                       {:ref batch1 :sku sku :quantity 10 :eta (date/parse "2011-01-01T00:00")}
+                                       ])
+      (is (thrown-match? {:status 400 :body  (str "\"Out of stock for sku " sku "\"")}
+                  (client/post (str (config/get-api-url) "/allocate") {:form-params  line1
+                                                                       :content-type :json
+                                                                       :accept       :json
+                                                                       :as
+           :json
+                                                                       })))
+
+      )))
+
+
+
+
+
+
+
+
+
