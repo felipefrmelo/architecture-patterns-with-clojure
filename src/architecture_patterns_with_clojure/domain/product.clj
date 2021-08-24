@@ -44,30 +44,16 @@
                     (add-event product (events/make-out-of-stock (:sku line)))
                     ))))
 
-(defn- sum-lines [lines]
-  (apply + (map :quantity lines)))
-
-(defn- quantity-to-deallocate-is-greater-than-unavailable? [lines batch]
-  (>= (sum-lines lines) (- (batch/available-quantity batch)))
-  )
+(defn available-quantity-neg? [batch] (< (batch/available-quantity batch) 0))
 
 (defn change_batch_quantity [product {:keys [ref quantity]}]
-  (let [batch (-> (first (filter #(= (:ref %) ref) (:batches product))) (assoc :quantity quantity))
-        lines-to-deallocate (reduce
-                              (fn [lines line]
-                                (if (quantity-to-deallocate-is-greater-than-unavailable? lines batch)
-                                  (reduced lines)
-                                  (conj lines line))) [] (:allocations batch))]
-    (-> product (change-batch (apply batch/deallocate batch lines-to-deallocate))
-        (add-event (map events/make-allocation-required lines-to-deallocate)))))
-
-(defn change_batch_quantity-recursive [product {:keys [ref quantity]}]
-  (let [batch (-> (first (filter #(= (:ref %) ref) (:batches product))) (assoc :quantity quantity))]
-    (loop [p (change-batch product batch)
-           b batch]
-      (if (< (batch/available-quantity b) 0)
-        (let [line (last (:allocations b))
-              new-batch (batch/deallocate b line)
-              n-prod (-> (change-batch p new-batch) (add-event (events/make-allocation-required line)))]
-          (recur n-prod new-batch))
-        p))))
+  (let [updated-batch (-> (first (filter #(= (:ref %) ref) (:batches product))) (assoc :quantity quantity))]
+    (loop [updated-product (change-batch product updated-batch)
+           updated-batch updated-batch]
+      (if (available-quantity-neg? updated-batch)
+        (let [line (last (:allocations updated-batch))
+              new-batch (batch/deallocate updated-batch line)]
+          (recur
+            (-> (change-batch updated-product new-batch) (add-event (events/make-allocation-required line)))
+            new-batch))
+        updated-product))))

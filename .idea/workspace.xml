@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af2dc864-8d5e-48bd-889f-a48ed9712f5c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/architecture_patterns_with_clojure/service_layer/handlers.clj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/architecture_patterns_with_clojure/adapters/repository.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/architecture_patterns_with_clojure/adapters/repository.clj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/architecture_patterns_with_clojure/domain/batch.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/architecture_patterns_with_clojure/domain/batch.clj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/architecture_patterns_with_clojure/domain/events.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/architecture_patterns_with_clojure/domain/events.clj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/architecture_patterns_with_clojure/domain/product.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/architecture_patterns_with_clojure/domain/product.clj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/architecture_patterns_with_clojure/service_layer/service.clj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/architecture_patterns_with_clojure/util/date.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/architecture_patterns_with_clojure/util/date.clj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/architecture_patterns_with_clojure/unit/batches_test.clj" beforeDir="false" afterPath="$PROJECT_DIR$/test/architecture_patterns_with_clojure/unit/batches_test.clj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/architecture_patterns_with_clojure/unit/product_test.clj" beforeDir="false" afterPath="$PROJECT_DIR$/test/architecture_patterns_with_clojure/unit/product_test.clj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/architecture_patterns_with_clojure/unit/service_test.clj" beforeDir="false" afterPath="$PROJECT_DIR$/test/architecture_patterns_with_clojure/unit/handler_test.clj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +206,7 @@
       <workItem from="1629566724744" duration="15510000" />
       <workItem from="1629633970264" duration="35054000" />
       <workItem from="1629719845961" duration="33698000" />
-      <workItem from="1629809603377" duration="601000" />
+      <workItem from="1629809603377" duration="1926000" />
     </task>
     <servers />
   </component>
