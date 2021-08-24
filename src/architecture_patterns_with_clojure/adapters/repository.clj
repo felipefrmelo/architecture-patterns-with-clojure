@@ -8,6 +8,7 @@
 (defprotocol AbstractRepository
   (save [this product])
   (get-by-sku [this sku])
+  (get-by-ref [this ref])
   )
 
 

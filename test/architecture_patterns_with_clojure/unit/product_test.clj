@@ -57,13 +57,13 @@
   (testing "records out of stock event if cannot allocate"
     (let [[batch line] (make-batch-and-line default-sku 10 11)
           product (product/new-product {:sku default-sku :batches [batch]})]
-      (is (match? (events/->OutOfStock default-sku)
+      (is (match? (events/make-out-of-stock default-sku)
                   (last (:events (product/allocate product line)))))
       ))
   (testing "raises out of stock exception if cannot allocate in multiples batches"
     (let [line (order/new-order-line {:order_id "123" :sku default-sku :quantity 101})
           product (product/new-product {:sku default-sku :batches [earliest medium latest]})]
-      (is (match? (events/->OutOfStock default-sku)
+      (is (match? (events/make-out-of-stock default-sku)
                   (last (:events (product/allocate product line)))))
       ))
   )

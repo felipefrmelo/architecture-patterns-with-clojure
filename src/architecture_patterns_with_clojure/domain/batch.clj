@@ -10,9 +10,12 @@
                :eta         eta
                :allocations #{}}))
 
+(defn allocated-quantity [batch]
+  (reduce #(+ (:quantity %2) %1) 0 (:allocations batch)))
+
 (defn available-quantity [batch]
-  (let [sum (reduce #(+ (:quantity %2) %1) 0 (:allocations batch))]
-    (- (:quantity batch) sum)))
+  (- (:quantity batch) (allocated-quantity batch))
+  )
 
 (defn can-allocate? [batch line]
   (and (= (:sku batch) (:sku line))
@@ -22,6 +25,8 @@
   (update batch :allocations conj line))
 
 
-(defn deallocate [batch line]
-  (update batch :allocations disj line))
+(defn deallocate [batch & lines]
+  (if (seq lines)
+    (recur (update batch :allocations disj (first lines)) (rest lines))
+    batch))
 

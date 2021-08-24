@@ -5,8 +5,8 @@
     (java.util Date))
   )
 
-(def ^:const ^:unit DAYS (ChronoUnit/DAYS))
-(def ^:const ^:unit MINUTES (ChronoUnit/MINUTES))
+(def DAYS (ChronoUnit/DAYS))
+(def MINUTES (ChronoUnit/MINUTES))
 
 
 (def now #(LocalDateTime/now))
@@ -20,7 +20,7 @@
 
 (defn to-db [date] (identity date))
 
-(defn parse [date-string] (LocalDateTime/parse  date-string))
+(defn parse [date-string] (LocalDateTime/parse date-string))
 
 (defn to-inst-ms [date]
   (-> date (.atZone (ZoneId/systemDefault)) (.toInstant) (inst-ms)))

@@ -17,23 +17,23 @@
 (deftest test-batches
   (testing "can allocate if available is greater than required"
     (let [[large_batch small_line] (make-batch-and-line default-sku 20 2)]
-      (is (match? true? (batch/can-allocate?  large_batch small_line)))
+      (is (match? true? (batch/can-allocate? large_batch small_line)))
       ))
 
   (testing "cannot allocate if available is smaller than required"
     (let [[small_batch large_line] (make-batch-and-line default-sku 2 20)]
-      (is (match? false? (batch/can-allocate?  small_batch large_line)))
+      (is (match? false? (batch/can-allocate? small_batch large_line)))
       ))
 
   (testing "can allocate if available is equal to required"
     (let [[batch line] (make-batch-and-line default-sku 20 20)]
-      (is (match? true? (batch/can-allocate?  batch line)))
+      (is (match? true? (batch/can-allocate? batch line)))
       ))
 
   (testing "cannot allocate if skus do not match"
     (let [[batch line] (make-batch-and-line default-sku 20 2)
           different-sku-li (assoc line :sku "DIFFERENT-SKU")]
-      (is (match? false? (batch/can-allocate?  batch different-sku-li)))
+      (is (match? false? (batch/can-allocate? batch different-sku-li)))
       ))
 
   (testing "allocating is idempotent"
@@ -49,7 +49,12 @@
 
   (testing "can only deallocate allocated lines"
     (let [[batch unallocated_line] (make-batch-and-line default-sku 20 2)]
-      (is (match? 20 (-> (batch/deallocate  batch unallocated_line) (batch/available-quantity))))
+      (is (match? 20 (-> (batch/deallocate batch unallocated_line) (batch/available-quantity))))
       ))
+
+  ;(testing "test deallocate one"
+  ;  (let [[batch line] (make-batch-and-line default-sku 20 2)]
+  ;    (is (match? line (-> (batch/allocate batch line) (batch/deallocate-one))))
+  ;    ))
 
   )
