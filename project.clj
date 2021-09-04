@@ -18,4 +18,14 @@
                  [org.clojure/data.json "0.2.6"]
                  [cheshire "5.10.0"]
                  ]
-  :repl-options {:init-ns architecture-patterns-with-clojure.core})
+  :repl-options {:init-ns architecture-patterns-with-clojure.core}
+
+  :min-lein-version "2.0.0"
+  :resource-paths ["config", "resources"]
+  ;; If you use HTTP/2 or ALPN, use the java-agent to pull in the correct alpn-boot dependency
+  ;:java-agents [[org.mortbay.jetty.alpn/jetty-alpn-agent "2.0.5"]]
+  :profiles {:dev {:plugins [[lein-midje "3.2.1"]]
+                   :aliases {"run-dev" ["trampoline" "run" "-m" "architecture-patterns-with-clojure.entrypoints.server/run-dev"]}}
+             :uberjar {:aot [architecture-patterns-with-clojure.entrypoints.server]}}
+  :main ^{:skip-aot true} architecture-patterns-with-clojure.entrypoints.server
+  )

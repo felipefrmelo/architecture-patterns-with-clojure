@@ -26,19 +26,18 @@
 (defn get-batch [product batch]
   (first (filter #(= (:ref %) (:ref batch)) (:batches product))))
 
-(defn assertIfBatchIsAllocatedCorrect [product line batch]
-  (is (match? (batch/allocate batch line)
+(defn assertIfBatchIsAllocatedCorrect [product line batch-to-allocate]
+  (is (match? (batch/allocate batch-to-allocate line)
               (-> (product/allocate product line)
-                  (get-batch batch))))
+                  (get-batch batch-to-allocate))))
   )
 
-(deftest test-allocate
+(deftest ^:unit test-allocate
   (testing "allocating to a batch reduces the available quantity"
     (let [[batch line] (make-batch-and-line default-sku 20 2)
           product (product/new-product {:sku default-sku :batches [batch]})]
-      (assertIfBatchIsAllocatedCorrect product line batch)
+      (is (match? 18 (-> (product/allocate product line) (get-batch batch) (batch/available-quantity))))
       ))
-
 
   (testing "prefers earlier batches"
     (let [line (order/new-order-line {:order_id "123" :sku default-sku :quantity 10})
@@ -57,13 +56,13 @@
   (testing "records out of stock event if cannot allocate"
     (let [[batch line] (make-batch-and-line default-sku 10 11)
           product (product/new-product {:sku default-sku :batches [batch]})]
-      (is (match? (events/make-out-of-stock default-sku)
+      (is (match? (events/out-of-stock {:sku default-sku})
                   (last (:events (product/allocate product line)))))
       ))
   (testing "raises out of stock exception if cannot allocate in multiples batches"
     (let [line (order/new-order-line {:order_id "123" :sku default-sku :quantity 101})
           product (product/new-product {:sku default-sku :batches [earliest medium latest]})]
-      (is (match? (events/make-out-of-stock default-sku)
+      (is (match? (events/out-of-stock {:sku default-sku})
                   (last (:events (product/allocate product line)))))
       ))
   )

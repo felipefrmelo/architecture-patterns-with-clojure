@@ -41,10 +41,10 @@
                                             (batch/allocate line))]
                     (change-batch product batch-allocated))
                   (catch ArityException e
-                    (add-event product (events/make-out-of-stock (:sku line)))
+                    (add-event product (events/out-of-stock line))
                     ))))
 
-(defn available-quantity-neg? [batch] (< (batch/available-quantity batch) 0))
+(defn- available-quantity-neg? [batch] (< (batch/available-quantity batch) 0))
 
 (defn change_batch_quantity [product {:keys [ref quantity]}]
   (let [updated-batch (-> (first (filter #(= (:ref %) ref) (:batches product))) (assoc :quantity quantity))]
@@ -54,6 +54,6 @@
         (let [line (last (:allocations updated-batch))
               new-batch (batch/deallocate updated-batch line)]
           (recur
-            (-> (change-batch updated-product new-batch) (add-event (events/make-allocation-required line)))
+            (-> (change-batch updated-product new-batch) (add-event (events/deallocated line)))
             new-batch))
         updated-product))))

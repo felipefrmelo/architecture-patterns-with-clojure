@@ -68,3 +68,13 @@
 ;(defn new-sql-repo [db]
 ;  (SqlRepository. db))
 ;
+
+(defrecord InMemoryRepository [products]
+  AbstractRepository
+  (save [this product] (swap! products assoc (:sku product) product))
+  (get-by-sku [this sku] (get @products sku))
+  (get-by-ref [this ref] (some (fn [prod] (when (some #(= (:ref %) ref) (:batches prod)) prod)) (vals @products)))
+  )
+
+(defn new-in-memory-repository []
+  (->InMemoryRepository (atom {})))
