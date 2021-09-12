@@ -14,7 +14,7 @@
 
 (def deallocated (make-event :deallocated [:order_id :sku :quantity]))
 (def out-of-stock (make-event :out-of-stock [:sku]))
-
+(def allocated (make-event :allocated [:order_id :sku :quantity :batchref]))
 
 
 

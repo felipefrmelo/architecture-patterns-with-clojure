@@ -18,7 +18,7 @@
 (defn from-db [date]
   (-> date (.toInstant) (.atZone (ZoneId/systemDefault)) (.toLocalDateTime)))
 
-(defn to-db [date] (identity date))
+(defn to-db [date] (-> date (.atZone (ZoneId/systemDefault)) .toInstant Date/from))
 
 (defn parse [date-string] (LocalDateTime/parse date-string))
 

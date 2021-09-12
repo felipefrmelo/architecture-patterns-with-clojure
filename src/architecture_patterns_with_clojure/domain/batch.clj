@@ -3,12 +3,12 @@
 
 (defrecord Batch [ref sku quantity eta allocations])
 
-(defn new-batch [{:keys [ref sku quantity eta] :or {eta (date/now)}}]
+(defn new-batch [{:keys [ref sku quantity eta allocations] :or {eta (date/now) allocations #{}}}]
   (map->Batch {:ref         ref
                :sku         sku
                :quantity    quantity
                :eta         eta
-               :allocations #{}}))
+               :allocations allocations}))
 
 (defn allocated-quantity [batch]
   (reduce #(+ (:quantity %2) %1) 0 (:allocations batch)))

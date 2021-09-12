@@ -1,18 +1,13 @@
 (ns architecture-patterns-with-clojure.fixtures
   (:require 
-            [architecture-patterns-with-clojure.adapters.database :as database]
-            [clojure.java.jdbc :as jdbc]))
+   [architecture-patterns-with-clojure.adapters.database :as database]
+   [monger.core :as mg]
+   [clojure.java.jdbc :as jdbc]))
 
-(defn db-fixture [f]
-  (database/load-tables)
+
+(defn clean-db [f]
   (f)
-  (database/drop-tables)
-  )
-
-
-
-
-(defn add-stock [db lines]
-  (jdbc/insert-multi! db :batches lines)
-  )
+  (let [conn (mg/connect)]
+    (mg/drop-db conn "monger-test")
+    (mg/disconnect conn))  )
 

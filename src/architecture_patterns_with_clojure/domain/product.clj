@@ -12,10 +12,11 @@
 
 (defrecord Product [sku batches events])
 
-(defn new-product [{:keys [sku batches]}]
+(defn new-product [{:keys [sku batches events] :or {events []}}]
   (map->Product {:sku     sku
                  :batches batches
-                 :events  []}))
+                 :events  events}))
+
 
 
 (defn- batches-available [batches line]
@@ -29,8 +30,10 @@
     (new-product (assoc product :batches (conj clean-batches batch)))))
 
 (defn- add-event [product event]
-  (update product :events (if (map? event) conj concat) event)
+  (update product :events conj event)
   )
+
+;(add-event {:events [{:e 1}]} {:e 1})
 
 (defn allocate ([product line]
                 (try
@@ -39,10 +42,14 @@
                                             (batches-available line)
                                             (get-prefer-batch)
                                             (batch/allocate line))]
-                    (change-batch product batch-allocated))
+                  
+                    (-> product
+                        (change-batch batch-allocated)
+                        (add-event (events/allocated (merge line {:batchref (:ref batch-allocated)})))))
                   (catch ArityException e
                     (add-event product (events/out-of-stock line))
                     ))))
+
 
 (defn- available-quantity-neg? [batch] (< (batch/available-quantity batch) 0))
 

@@ -8,7 +8,7 @@ build:
 	docker-compose build
 
 deps:
-	docker-compose up -d redis
+	docker-compose up -d  rabbitmq mongo
 
 up:
 	docker-compose up -d

@@ -14,6 +14,7 @@
 
 (defn emit!
   ([event]
+
    (put! event-ch {::type    (:type event)
                    ::payload (:payload event)})))
 

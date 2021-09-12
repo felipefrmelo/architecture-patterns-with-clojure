@@ -59,6 +59,24 @@
       (is (match? (events/out-of-stock {:sku default-sku})
                   (last (:events (product/allocate product line)))))
       ))
+
+  (testing "outputs allocated event"
+    (let [[batch line] (make-batch-and-line default-sku 100 10)
+          product (product/new-product {:sku default-sku :batches [batch]})]
+      (is (match? (events/allocated {:order_id "order-123" :sku default-sku :quantity 10 :batchref (:ref batch) })
+                  (last (:events (product/allocate product line)))))
+      ))
+
+    (testing "outputs allocated multiples events"
+    (let [[batch line] (make-batch-and-line default-sku 100 10)
+          product (product/new-product {:sku default-sku :batches [batch]})]
+      (is (match? 2
+                  (count (:events (-> product
+                                      (product/allocate line)
+                                      (product/allocate {:order_id "ord2" :sku default-sku :quantity 1}))))))
+      ))
+
+  
   (testing "raises out of stock exception if cannot allocate in multiples batches"
     (let [line (order/new-order-line {:order_id "123" :sku default-sku :quantity 101})
           product (product/new-product {:sku default-sku :batches [earliest medium latest]})]
