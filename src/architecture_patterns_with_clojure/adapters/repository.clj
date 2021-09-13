@@ -49,7 +49,9 @@
   (get-by-ref [this ref] (-> (mc/find-one-as-map db coll {"batches.ref" ref})
                              product-from-db)))
 
+(def db (let [conn (mg/connect)]
+              (mg/get-db conn "monger-test")))
+
+
 (defn new-mongo-repository []
-  (let [conn (mg/connect)
-        db   (mg/get-db conn "monger-test")]
-    (->MongoRepository db "product")))
+  (->MongoRepository db "product"))

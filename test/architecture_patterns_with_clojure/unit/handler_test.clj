@@ -31,7 +31,7 @@
    (handlers/stop)
    (let [repo (new-in-memory-repository)
          pubsub (event-publisher/new-pubsub-dummy)
-         dispatch! (handlers/make-dispatch repo pubsub send-notification)
+         dispatch! (handlers/make-dispatch repo pubsub send-notification identity)
          ]  [dispatch! repo  pubsub])))
 
 

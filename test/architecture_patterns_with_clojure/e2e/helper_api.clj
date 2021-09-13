@@ -13,6 +13,9 @@
                 :body (json/stringify body)
                 ))
 
+(defn get-allocation [service order_id]
+  (make-request service :get (str "/allocations/" order_id)))
+
 (defn post-to-add-batch! [service ref sku quantity eta]
   (is (= (:status (make-request service :post "/batch"
                                 :body {:sku      sku

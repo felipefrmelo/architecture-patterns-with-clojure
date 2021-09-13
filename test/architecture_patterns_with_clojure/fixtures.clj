@@ -9,5 +9,8 @@
   (f)
   (let [conn (mg/connect)]
     (mg/drop-db conn "monger-test")
-    (mg/disconnect conn))  )
+    (mg/disconnect conn)
+    )
+  )
+
 

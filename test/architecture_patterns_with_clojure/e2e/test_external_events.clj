@@ -20,18 +20,17 @@
 (def service
   (::bootstrap/service-fn (bootstrap/create-servlet (api/service
                                                      (handlers/make-dispatch (repository/new-mongo-repository)
-                                                      (event-publisher/new-pubsub-dummy)
-                                                      identity)
-                                                     ))))
+                                                                             (event-publisher/new-pubsub-dummy)
+                                                                             identity
+                                                                             identity)))))
 
 
 (use-fixtures :each (fn [f]
                       (handlers/stop)
                       (with-open [conn (event-consumer/start)]
-                        (f)))   (fn [f] (f) (handlers/stop) )
-  
-  fixtures/clean-db                     
-  ) 
+                        (f)))   (fn [f] (f) (handlers/stop))
+
+  fixtures/clean-db)
 
 
 (deftest test_change_batch_quantity_leading_to_reallocation
@@ -49,21 +48,18 @@
     (post-to-add-batch! service other-batch sku 10 "2024-01-03T03:00")
     (post-to-allocate!  service order_id sku 10)
 
-   
+
+
     (Thread/sleep 100)
     (event-publisher/producer pubsub event-publisher/qname {:ref early-batch :quantity 5})
     (Thread/sleep 100)
-                                        ;  (println later-batch)
 
-  
-   
+
     (is (match? {:batchref later-batch
                  :sku sku
                  :quantity 10
-                 :order_id order_id} @payload ))
-    (.close conn)
-    )
-  )
+                 :order_id order_id} @payload))
+    (.close conn)))
 
 
 

@@ -2,6 +2,7 @@
   (:require [architecture-patterns-with-clojure.domain.commands :as commands]
             [architecture-patterns-with-clojure.util.date :as date]
             [architecture-patterns-with-clojure.util.json :as json]
+            [architecture-patterns-with-clojure.views :as views]
             cheshire.generate
             [io.pedestal.http :as http]
             [io.pedestal.http.body-params :as body-params]
@@ -34,10 +35,28 @@
   (ring-resp/created (:order_id json-params)))
 
 
-
 (defn add-batch [{:keys [json-params dispatch!]}]
   (dispatch! (commands/create-batch (update json-params :eta date/parse)))
   (ring-resp/created "opa"))
+
+(defn allocations_views_endpoint [{:keys [path-params]}]
+  (let [order_id (:order_id path-params)
+        result (views/allocations order_id)]
+  (ring-resp/response result)
+    ;; (if result
+    ;;   (ring-resp/response result)
+    ;;   (ring-resp/not-found "Not found")
+    
+    ;;   )
+    ))
+
+;; @app.route("/allocations/<orderid>", methods=["GET"])
+;; def allocations_view_endpoint(orderid):
+;;     uow = unit_of_work.SqlAlchemyUnitOfWork()
+;;     result = views.allocations(orderid, uow)
+;;     if not result:
+;;         return "not found", 404
+;;     return jsonify(result), 200
 
 
 (def common-interceptors [service-error-handler (body-params/body-params) http/json-body])
@@ -54,6 +73,7 @@
   (let [db-interceptor (make-db-interceptor dispatch)]
     #{["/allocate" :post (conj common-interceptors db-interceptor  `allocate-endpoint)]
       ["/batch" :post (conj common-interceptors db-interceptor `add-batch)]
+      ["/allocations/:order_id" :get (conj common-interceptors `allocations_views_endpoint)]
       }))
 
 

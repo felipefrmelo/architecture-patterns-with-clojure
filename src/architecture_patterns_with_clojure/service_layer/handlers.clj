@@ -12,7 +12,12 @@
              message-bus]
             [architecture-patterns-with-clojure.util.exception
              :refer
-             [make-ex-info]]))
+             [make-ex-info]]
+            ;;kct
+            [monger.core :as mg]
+            [monger.collection :as mc]
+            [clojure.core.async :as async]))
+            
 
 (defn invalid-sku [line]
   (make-ex-info {:message (str "Invalid sku " (:sku line))
@@ -28,9 +33,9 @@
     (when-not product (throw (invalid-sku line)))
     (let [p (product/allocate product line)]
       (repository/save repo (assoc  p :events []))
-      (run! message-bus/emit! (:events p))
-      )
-    ))
+      (run! message-bus/emit! (:events p)))))
+      
+    
 
 
 (defn add-batch [command repo]
@@ -39,8 +44,8 @@
         batches (if product
                   (conj (:batches product) (batch/new-batch command))
                   [(batch/new-batch command)])]
-    (repository/save repo (product/new-product {:sku sku :batches batches})))
-  )
+    (repository/save repo (product/new-product {:sku sku :batches batches}))))
+  
 
 
 (defn change-batch-quantity [command repo]
@@ -56,29 +61,34 @@
 
 (defn send-out-of-stock-notification [event send-notification]
   (println (str "Out of stock for " (:sku event)))
-  (send-notification (str "Out of stock for " (:sku event)))
-  )
+  (send-notification (str "Out of stock for " (:sku event))))
+  
 
 
 (defn publish-allocated-event [event pubsub]
  
-  (event-publisher/producer pubsub "line_allocated" event)
+  (event-publisher/producer pubsub "line_allocated" event))
+  
+
+
+(defn add-allocation-to-read-model [event insert-allocation]
+  (insert-allocation event)
   )
 
-  
-(def start (fn [repo pubsub send-notification]
+(def start (fn [repo pubsub send-notification insert-allocation]
              (message-bus/subscribe! :out-of-stock #(send-out-of-stock-notification % send-notification))
              (message-bus/subscribe! :deallocated #(reallocate % repo))
-             (message-bus/subscribe! :allocated #(publish-allocated-event % pubsub))))
+             (message-bus/subscribe! :allocated #(publish-allocated-event % pubsub))
+             (message-bus/subscribe! :allocated #(add-allocation-to-read-model % insert-allocation))))
 
-(defn stop [] (clojure.core.async/unsub-all message-bus/event-bus))
+(defn stop [] (async/unsub-all message-bus/event-bus))
 
 (defmethod dispatch! :create-batch [command & {:keys [repo]}] (add-batch (:payload command) repo))
 (defmethod dispatch! :allocate [command & {:keys [repo]}] (allocate (:payload command) repo))
 (defmethod dispatch! :change-batch-quantity [command & {:keys [repo]}] (change-batch-quantity (:payload command) repo))
 
-(defn make-dispatch [repo pubsub send-notification]
-  (start repo pubsub send-notification)
+(defn make-dispatch [repo pubsub send-notification insert]
+  (start repo pubsub send-notification insert)
   (fn [command] (dispatch! command :repo repo)))
 
 

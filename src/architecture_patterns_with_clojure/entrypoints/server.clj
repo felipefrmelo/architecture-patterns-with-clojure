@@ -5,12 +5,15 @@
             [architecture-patterns-with-clojure.entrypoints.api :as api]
             [architecture-patterns-with-clojure.adapters.repository :as repository]
             [architecture-patterns-with-clojure.adapters.event-publisher :as event-publisher]
-            [architecture-patterns-with-clojure.service-layer.handlers :as handlers]))
+            [architecture-patterns-with-clojure.service-layer.handlers :as handlers]
+            [architecture-patterns-with-clojure.views :as views]))
 
 (def repo (repository/new-mongo-repository))
 (def send-email identity)
 
-(defonce runnable-service (server/create-server (api/service (handlers/make-dispatch repo (event-publisher/new-pubsub-rmq) send-email) )))
+(defonce runnable-service 
+  (server/create-server 
+   (api/service (handlers/make-dispatch repo (event-publisher/new-pubsub-rmq) send-email views/insert-view) )))
 
 
 
@@ -24,7 +27,7 @@
               ::server/join? false
               ;; Routes can be a function that resolve routes,
               ;;  we can use this to set the routes to be reloadable
-              ::server/routes #(route/expand-routes (deref (api/routes repo )))
+              ::server/routes #(route/expand-routes (deref (api/routes repo)))
               ;; all origins are allowed in dev mode
               ::server/allowed-origins {:creds true :allowed-origins (constantly true)}
               ;; Content Security Policy (CSP) is mostly turned off in dev mode
@@ -33,8 +36,8 @@
       server/default-interceptors
       server/dev-interceptors
       server/create-server
-      server/start)
-  )
+      server/start))
+  
 
 (defn -main
   "The entry-point for 'lein run'"

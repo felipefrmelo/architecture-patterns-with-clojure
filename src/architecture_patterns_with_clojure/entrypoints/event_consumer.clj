@@ -22,7 +22,7 @@
 
 
 (defn handle-change-batch-quantity [_ _ msg]
-  (let [dispatch! (handlers/make-dispatch repo pubsub send-email)
+  (let [dispatch! (handlers/make-dispatch repo pubsub send-email identity)
         cmd (commands/command :change-batch-quantity msg)]
     (dispatch! cmd)))
 
